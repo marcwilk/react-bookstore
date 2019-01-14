@@ -4,9 +4,9 @@ export default class Book extends React.Component {
 
   render() {
     return (
-      <div>
-      {this.props.bookList.map(book => book.title)}
-      </div>
+      <li className="list-group-item">
+        {this.props.title}
+      </li>
     )
   }
 
