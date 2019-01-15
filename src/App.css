@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: gray;
+  color: black;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  margin-left: 30px;
+}
+
+.books-style {
+  font-size: 20px;
+  color: black;
+}

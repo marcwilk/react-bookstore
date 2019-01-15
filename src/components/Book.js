@@ -1,13 +1,15 @@
-import React from 'react';
+import React from 'react'
 
 export default class Book extends React.Component {
 
   render() {
     return (
       <li className="list-group-item">
-        {this.props.title}
+        <div> Title: {this.props.title} </div>
+        <div> Author: {this.props.author} </div>
+        <div> Pages: {this.props.pages} </div>
+        <div> Price: ${this.props.price} </div>
       </li>
     )
   }
-
 }
