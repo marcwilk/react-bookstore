@@ -12,7 +12,7 @@ class App extends Component {
     this.setState ({books: json})
   }
 
-  search = (e) => {
+  search = async (e) => {
     e.preventDefault()
     this.setState({
       books: this.state.books.filter(book => book.title.toLowerCase().includes(e.target.search.value.toLowerCase()))
@@ -55,10 +55,10 @@ class App extends Component {
     e.preventDefault()
     let title = e.target.name
     let newState = this.state
-    let avail=newState.books
-    let selection=avail.filter(book=> book.title===title)[0]
-    let newSelection= {...selection, inCart: true}
-    let selectionIndex= this.state.books.indexOf(selection)
+    let avail = newState.books
+    let selection = avail.filter(book=> book.title===title)[0]
+    let newSelection = {...selection, inCart: true}
+    let selectionIndex = this.state.books.indexOf(selection)
     this.setState(
       {
         books: [...this.state.books.slice(0, selectionIndex), newSelection ,...this.state.books.slice(selectionIndex+1)]

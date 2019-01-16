@@ -10,7 +10,7 @@ export default class BookList extends React.Component {
         <h1>{this.props.title}</h1>
           <div className="container">
             <div className="row">
-              <div className="col-lg-12">
+              <div className="col-lg-6">
                 <form onSubmit={this.props.search}>
                   <div className="col text-left">
                     <input type="text" name="search" id="search" className="form-control" placeholder="Search book title..." />
@@ -23,16 +23,24 @@ export default class BookList extends React.Component {
               </div>
               <br/>
               <div className="books-style text-center">
-              Books
+                Books
               </div>
               <ul className="list-group text-left">
-              {this.props.books.map(book => <Book addToCart={this.props.addToCart} key={book.id} title={book.title} author={book.author} pages={book.pages} price={book.price}/>)}
+                {this.props.books.map(book => <Book addToCart={this.props.addToCart} key={book.id} title={book.title} author={book.author} pages={book.pages} price={book.price}/>)}
               </ul>
-              <div className="books-style">
-              Cart
+            </div>
+            <div className="col-lg-6">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+              <div className="books-style text-center">
+                Cart
               </div>
               <ul className="list-group text-left">
-              <Cart cart = {this.props.books} />
+                <Cart cart = {this.props.books} />
               </ul>
             </div>
           </div>
@@ -40,7 +48,6 @@ export default class BookList extends React.Component {
       </div>
     )
   }
-
 }
 
 BookList.defaultProps = {
