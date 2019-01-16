@@ -4,7 +4,7 @@ import './App.css'
 
 class App extends Component {
 
-  state = { books: [], filteredBooks: [] }
+  state = { books: [] }
 
   async componentDidMount() {
     const response = await fetch('http://localhost:8082/api/books')
@@ -51,10 +51,25 @@ class App extends Component {
     })
   }
 
+  addToCart=(e)=>{
+    e.preventDefault()
+    let title = e.target.name
+    let newState = this.state
+    let avail=newState.books
+    let selection=avail.filter(book=> book.title===title)[0]
+    let newSelection= {...selection, inCart: true}
+    let selectionIndex= this.state.books.indexOf(selection)
+    this.setState(
+      {
+        books: [...this.state.books.slice(0, selectionIndex), newSelection ,...this.state.books.slice(selectionIndex+1)]
+      }
+    )
+  }
+
   render() {
     return (
       <main>
-        <BookList title="Bookstore" books={this.state.books} search={this.search} sortByTitle={this.sortByTitle} sortByAuthor={this.sortByAuthor}/>
+        <BookList title="Bookstore" books={this.state.books} search={this.search} sortByTitle={this.sortByTitle} sortByAuthor={this.sortByAuthor} booksInCart={this.state.books} addToCart={this.addToCart}/>
       </main>
     )
   }

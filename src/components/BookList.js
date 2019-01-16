@@ -1,13 +1,14 @@
 import React from 'react'
 import Book from './Book'
+import Cart from './Cart'
 
 export default class BookList extends React.Component {
 
-  renderBooks() {
-    return this.props.books.map((book, i) => {
-      return <Book {...book} key={i} />
-    })
-  }
+  // renderBooks() {
+  //   return this.props.books.map((book, i) => {
+  //     return <Book addToCart={this.props.addToCart} {...book} key={i} />
+  //   })
+  // }
 
   render() {
     return (
@@ -31,13 +32,13 @@ export default class BookList extends React.Component {
               Books
               </div>
               <ul className="list-group text-left">
-              {this.renderBooks()}
+              {this.props.books.map(book => <Book addToCart={this.props.addToCart} key={book.id} title={book.title} author={book.author} pages={book.pages} price={book.price}/>)}
               </ul>
               <div className="books-style">
               Cart
               </div>
               <ul className="list-group text-left">
-              {this.renderBooks()}
+              <Cart cart = {this.props.books} />
               </ul>
             </div>
           </div>
