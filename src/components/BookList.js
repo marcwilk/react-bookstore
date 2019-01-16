@@ -9,18 +9,20 @@ export default class BookList extends React.Component {
       <div className="book-list text-center">
         <h1>{this.props.title}</h1>
           <div className="container">
+            <div className="row justify-content-center">
+            <form onSubmit={this.props.search}>
+              <div className="col text-left">
+                <input type="text" name="search" id="search" className="form-control" placeholder="Search book title..." />
+                <button type="submit" class="btn btn-primary" href="#">Search</button>
+              </div>
+            </form>
+          <div className="col text-center">
+            <button onClick={this.props.sortByTitle} type="button" class="btn btn-primary">Sort by Title</button>
+            <button onClick={this.props.sortByAuthor} type="button" class="btn btn-primary">Sort by Author</button>
+          </div>
+            </div>
             <div className="row">
               <div className="col-lg-6">
-                <form onSubmit={this.props.search}>
-                  <div className="col text-left">
-                    <input type="text" name="search" id="search" className="form-control" placeholder="Search book title..." />
-                    <button type="submit" class="btn btn-primary" href="#">Search</button>
-                  </div>
-                </form>
-              <div className="col text-center">
-                <button onClick={this.props.sortByTitle} type="button" class="btn btn-primary">Sort by Title</button>
-                <button onClick={this.props.sortByAuthor} type="button" class="btn btn-primary">Sort by Author</button>
-              </div>
               <br/>
               <div className="books-style text-center">
                 Books
@@ -30,11 +32,6 @@ export default class BookList extends React.Component {
               </ul>
             </div>
             <div className="col-lg-6">
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
             <br />
               <div className="books-style text-center">
                 Cart

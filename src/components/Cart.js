@@ -8,8 +8,7 @@ class Cart extends Component {
       <div>
       {this.props.cart.filter(book=> (book.inCart === true)).map(book=> <div className="list-group-item">Title: {book.title}<br/>Price: ${book.price}</div>)}
       </div>
-      <br>
-      </br>
+      <br />
       <div className="books-style text-center">
       Cart Total: $
       {this.props.cart.filter(book=> (book.inCart === true)).map(book=> book.price).reduce((sum, price) => sum + price,0)}
