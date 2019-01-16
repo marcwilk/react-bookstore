@@ -4,12 +4,6 @@ import Cart from './Cart'
 
 export default class BookList extends React.Component {
 
-  // renderBooks() {
-  //   return this.props.books.map((book, i) => {
-  //     return <Book addToCart={this.props.addToCart} {...book} key={i} />
-  //   })
-  // }
-
   render() {
     return (
       <div className="book-list text-center">
@@ -20,12 +14,12 @@ export default class BookList extends React.Component {
                 <form onSubmit={this.props.search}>
                   <div className="col text-left">
                     <input type="text" name="search" id="search" className="form-control" placeholder="Search book title..." />
-                    <button type="submit" class="btn btn-primary" href="#" role="button">Search</button>
+                    <button type="submit" class="btn btn-primary" href="#">Search</button>
                   </div>
                 </form>
               <div className="col text-center">
-                <button onClick={this.props.sortByTitle} type="button" class="btn btn-primary" role="button">Sort by Title</button>
-                <button onClick={this.props.sortByAuthor} type="button" class="btn btn-primary" role="button">Sort by Author</button>
+                <button onClick={this.props.sortByTitle} type="button" class="btn btn-primary">Sort by Title</button>
+                <button onClick={this.props.sortByAuthor} type="button" class="btn btn-primary">Sort by Author</button>
               </div>
               <br/>
               <div className="books-style text-center">
