@@ -69,7 +69,7 @@ class App extends Component {
   render() {
     return (
       <main>
-        <BookList title="Bookstore" books={this.state.books} search={this.search} sortByTitle={this.sortByTitle} sortByAuthor={this.sortByAuthor} booksInCart={this.state.books} addToCart={this.addToCart}/>
+        <BookList title="Bookstore" books={this.state.books} search={this.search} sortByTitle={this.sortByTitle} sortByAuthor={this.sortByAuthor} booksInCart={this.state.books} addToCart={this.addToCart} cartTotal={this.cartTotal}/>
       </main>
     )
   }
